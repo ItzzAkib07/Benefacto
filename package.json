@@ -1,0 +1,21 @@
+{
+  "name": "clientproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "deploy": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.7",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.7",
+    "vite": "^6.1.1"
+  }
+}
