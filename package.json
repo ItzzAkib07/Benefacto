@@ -4,14 +4,14 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
-    "deploy": "npm run build"
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+"type": "module",
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.7",
     "postcss": "^8.5.2",
