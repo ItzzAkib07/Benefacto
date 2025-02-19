@@ -5,7 +5,7 @@
     "date": "February 14, 2025",
     "excerpt": "As professionals, we often reach a point where we start questioning everything. What’s next?...",
     "content": "<p>As professionals, we often reach a point in our careers where we start questioning everything. What’s next? Is there more to what we’re doing? Am I truly aligned with my career path, or is it time to make a change? These questions often arise after years of experience, hard work, and growth in our current roles. However, despite the success, many mid-career professionals are still unsure about their next move. One of the most common dilemmas many professionals face today is the <strong> uncertainty about whether to switch careers or industries. </strong> <br/>In today’s fast-changing world, the idea of transitioning into a new career or even a completely different industry can be both thrilling and daunting. It’s easy to get stuck in the analysis, overwhelmed by the potential risks and rewards of such a move. The fear of starting from scratch, leaving behind the familiar, and the anxiety about whether it’s the right decision can be paralyzing.If you’re grappling with this uncertainty, you’re not alone. Many professionals with over five years of experience face similar challenges. But the good news is that uncertainty isn’t a roadblock—it’s a signal that you might be ready for something new. And with the right tools, mindset, and guidance, you can navigate this uncertainty and turn it into a powerful opportunity for growth and alignment between your personal values and professional life.</p>",
-    "image": "/BenefactoConsulting/images/img-1.jpg"
+    "image": "./images/img-1.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "date": "February 5, 2025",
     "excerpt": "As professionals, we all hit a point in our careers where we pause and reflect...",
     "content": "Here is the full content of the blog...",
-    "image": "images/img-2.jpg"
+    "image": "./images/img-2.jpg"
   },
   {
     "id": 3,
