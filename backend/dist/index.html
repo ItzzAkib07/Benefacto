@@ -9,10 +9,10 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Benefacto Consulting</title>
-  <link rel="stylesheet" crossorigin href="./assets/index-Kg9ExiUq.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-5TbtFzds.css">
 </head>
 
 <body>
@@ -55,7 +55,7 @@
       class="group relative flex items-center bg-black text-green-600 p-2 rounded-r-full transition-all duration-300">
       <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition-transform duration-300"></i>
       <span
-        class="absolute left-12 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 bg-green-600 text-white px-3 py-1 rounded-lg ml-2 transition-all duration-300">
+        class="absolute left-12 hidden scale-90 group-hover:flex group-hover:scale-100 bg-green-600 text-white px-3 py-1 rounded-lg ml-2 transition-all duration-300">
         Chat on WhatsApp
       </span>
     </a>
@@ -65,7 +65,7 @@
       class="group relative flex items-center bg-black text-blue-500 p-2 rounded-r-full transition-all duration-300">
       <i class="fab fa-linkedin text-2xl group-hover:scale-110 transition-transform duration-300"></i>
       <span
-        class="absolute left-12 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 bg-blue-500 text-white px-3 py-1 rounded-lg ml-2 transition-all duration-300">
+        class="absolute left-12 hidden scale-90 group-hover:flex group-hover:scale-100 bg-blue-500 text-white px-3 py-1 rounded-lg ml-2 transition-all duration-300">
         Connect on LinkedIn
       </span>
     </a>
@@ -75,12 +75,11 @@
       class="group relative flex items-center bg-black text-blue-700 p-2 rounded-r-full transition-all duration-300">
       <i class="fab fa-facebook text-2xl group-hover:scale-110 transition-transform duration-300"></i>
       <span
-        class="absolute left-12 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 bg-blue-700 text-white px-3 py-1 rounded-lg ml-2 transition-all duration-300">
+        class="absolute left-12 hidden scale-90 group-hover:flex group-hover:scale-100 bg-blue-700 text-white px-3 py-1 rounded-lg ml-2 transition-all duration-300">
         Connect on Facebook
       </span>
     </a>
   </div>
-
 
 
   <!-- scroll to top button -->
@@ -264,11 +263,6 @@
 
       <div id="blog-content"></div>
 
-      <!-- Navigation Buttons
-    <div class="flex justify-between mt-6 border-t pt-4">
-      <a id="prev-blog" class="text-blue-600 hover:underline cursor-pointer">← Previous Blog</a>
-      <a id="next-blog" class="text-blue-600 hover:underline cursor-pointer">Next Blog →</a>
-    </div> -->
     </div>
   </div>
 
@@ -279,13 +273,13 @@
       <!-- Contact Form -->
       <div class="text-center md:text-left" data-aos="fade-right">
         <h2 class="text-4xl font-bold text-gray-900 mb-6">Contact Us</h2>
-        <form id="contactForm" class="space-y-6">
-          <input type="text" placeholder="Name"
-            class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-blue-600 py-2" required>
-          <input type="email" placeholder="Email"
-            class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-blue-600 py-2" required>
-          <textarea placeholder="Message"
-            class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-blue-600 py-2" required></textarea>
+        <form id="contact-form" name="Form" class="space-y-6">
+          <input type="text" placeholder="Name" name="name" id="name"
+            class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-blue-600 py-2">
+          <input type="email" placeholder="Email" name="email" id="email"
+            class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-blue-600 py-2">
+          <textarea placeholder="Message" name="message" id="message"
+            class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-blue-600 py-2"></textarea>
           <button type="submit"
             class="bg-yellow-500 text-white px-6 py-3 rounded-lg w-full font-semibold hover:bg-yellow-600 transition cursor-pointer">Submit</button>
         </form>
@@ -377,41 +371,86 @@
     </div>
   </footer>
 
-  <!-- script for contact form -->
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      let messageBox = document.getElementById("formMessage");
-      messageBox.textContent = "Your message has been sent successfully!";
-      messageBox.classList.remove("hidden", "text-red-500");
-      messageBox.classList.add("text-green-500");
-      this.reset();
-    });
 
-    document.getElementById("subscribeForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      let email = document.getElementById("emailInput").value;
+  <!-- Toastify  -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-      if (email) {
-        let subscribers = JSON.parse(localStorage.getItem("subscribers")) || [];
-        if (!subscribers.includes(email)) {
-          subscribers.push(email);
-          localStorage.setItem("subscribers", JSON.stringify(subscribers));
-        }
-        document.getElementById("message").classList.remove("hidden");
-        document.getElementById("subscribeForm").reset();
-      }
-    });
+  <!-- EmailJS CDN Link -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+  <!-- Initializing the EmailJS -->
+  <script type="text/javascript">
+    (function () {
+      emailjs.init('tiozmsqpHyfvx7sdX');
+    })();
   </script>
 
+  <!-- Function to send mail -->
+  <script>
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get the form input values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Validate the form inputs
+        if (name === '' || email === '' || message === '') {
+          showToast("Please fill in all the fields.");
+        } else {
+          // All fields are filled, proceed with sending the email
+          emailjs.sendForm('Email-js Service_ID', 'Email-js Template_ID', this)
+            .then(function () {
+              showToast("Thank you for connecting. \n I will get back to you shortly...");
+              resetForm();
+              scrollToTop();
+            }, function (error) {
+              showToast("Failed to send email. Please try again.");
+            });
+        }
+      });
+    };
+
+
+    // Function to reset the form
+    function resetForm() {
+      document.getElementById('contact-form').reset();
+    }
+
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo(0, 0);
+    }
+
+
+    function showToast(message) {
+      // Display toast message using a library like Toastify
+      Toastify({
+        text: message,
+        duration: 5000,
+        close: true,
+        stopOnFocus: true,
+        gravity: "top", // Display at the top of the page
+        position: "right", // Center horizontally
+        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)", // Custom background color
+        style: {
+          width: "auto",
+          display: "flex",
+          justifyContent: "space-between",
+        },
+      }).showToast();
+    }
+  </script>
 
   <!-- script for blog slider and opening blogs in new page -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  // const response = await
+  fetch("https://raw.githubusercontent.com/ItzzAkib07/BenefactoConsulting/refs/heads/main/blogs.json");
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       try {
-        // const response = await fetch("https://raw.githubusercontent.com/ItzzAkib07/BenefactoConsulting/refs/heads/main/blogs.json");
         const response = await fetch("./blogs.json");
 
         if (!response.ok) throw new Error("Failed to load blogs.json");
@@ -476,7 +515,6 @@
       }
     });
   </script>
-
 
   <!-- script for navbar and scroll to top button -->
   <script>
